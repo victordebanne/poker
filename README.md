@@ -16,7 +16,7 @@ $$
 \begin{align}
 \text{avec} \quad E \quad \text{l'ensemble des cartes connues} \\
 \text{et} \quad F \quad \text{l'ensemble des cartes non connues.}\\
-\mathbb{P}(x) =
+\mathbb{P}(x|E) =
 \begin{cases}
 \frac{1}{52 - \lvert E \rvert} \quad \text{si} \quad x \notin E \\
 1 \quad \text{sinon}
@@ -27,11 +27,16 @@ $$
 on peut calculer la probabilité de chaque combinaison, à chaque tour, ainsi :
 
 $$
-\mathbb{P}(c_i | E) = \prod_{k = 1}^{K} \mathbb{P} (x_k)
+\mathbb{P}(c_i | E) = \prod_{k = 1}^{K} \mathbb{P} (x_k| E)
 $$
 
 $$
 \text{avec} \quad K \quad \text{le nombre de cartes dans la combinaison et} \quad x_k \quad \text{la carte de la combinaison}
+$$
+
+## demonstration : les cartes distribuées ne changent pas la probabilité d'obtenir une carte x
+
+$$
 \begin{align}
 &\text{Probabilité de tirer une carte x parmi n cartes sachant que k cartes ont été brulées} \\
 &\frac{1}{n - 1} \cdot (1 - \frac{1}{n}) = \frac{1}{n}
@@ -54,3 +59,5 @@ $$
 &\text{d'une autre façon, si n - 1 cartes sont brulées, la probabilité que la carte non brulée soit x est} \quad \frac{1}{n} 
 \end{align}
 $$
+
+
