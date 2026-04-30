@@ -37,10 +37,57 @@ $$
 \end{align}
 $$
 
-### probabilité du tirage d'une combinaison c parmi n cartes sachant les cartes sans remise
+### probabilité du tirage d'une combinaison c parmi n cartes sur t tirages sachant les cartes sans remise
 
 $$
 \mathbb{P}(c | E) = \mathbb{P}(c - c \cap E) 
+$$
+
+ici, nous décomposons en plusieurs combinaisons, ce que l'on considèrerait une combinaison. 
+par exemple : 
+la combinaison paire d'as se décompose en : 
+
+$$
+\begin{align}
+&A♦ + A♥ \\
+&A♦ + A♠ \\
+&A♦ + A♣ \\
+&A♥ + A♠ \\
+&A♥ + A♣ \\
+&A♠ + A♣ \\
+\text{donc} \ &13 \times \binom{4}{2} \ \text{combinaisons de paires}
+\end{align}
+$$
+
+on peut donc calculer la probabilité avant distribution d'obtenir chaque combinaison. 
+
+$$
+\begin{align}
+&\text{probabilité de tirer x et y parmi n cartes sans remise sur 3 tirages} \\
+P(x \ \text{puis} \ y \ \text{puis rien}) &= \frac{1}{n}\cdot\frac{1}{n-1} \\
+P(y \ \text{puis} \ x \ \text{puis rien}) &= \frac{1}{n}\cdot\frac{1}{n-1} \\
+P(x \ \text{puis rien puis} \ y) &= \frac{1}{n}\cdot\frac{1}{n-2} \\
+P(y \ \text{puis rien puis} \ x) &= \frac{1}{n}\cdot\frac{1}{n-2} \\
+P(\text{rien puis} \ x \ \text{puis} \ y) &= \frac{1}{n - 1}\cdot\frac{1}{n-2} \\
+P(\text{rien puis} \ y \ \text{puis} \ x) &= \frac{1}{n - 1}\cdot\frac{1}{n-2} \\
+&\text{on généralise avec une combinaison c de k cartes parmi n cartes sur t tirages avec t > k}\\
+&\text{par exemple pour t = 4 et k = 2}\\
+&\binom{t}{k}
+\begin{cases}
+k! \times &1 \ 1 \ 0 \ 0\\
+k! \times&1 \ 0 \ 1 \ 0\\
+k! \times&1 \ 0 \ 0 \ 1\\
+k! \times&0 \ 0 \ 1 \ 1\\
+k! \times&0 \ 1 \ 0 \ 1\\
+k! \times&0 \ 1 \ 1 \ 0\\
+\end{cases} 
+\\
+\mathbb{P}(c) &=
+\binom{t}{k} k!\prod_{i = 0}^{k - 1}\frac{1}{n-i}\\
+\prod_{i = 0}^{k - 1}n-i &= \frac{n!}{(n-k)!}\\
+\text{d'ou}\quad k!\prod_{i = 0}^{k - 1}\frac{1}{n-i} &= \frac{k!(n-k)!}{n!} = \frac{1}{\binom{n}{k}}\\
+\text{d'ou} \quad \mathbb{P}(c) &= \frac{\binom{t}{k}}{\binom{n}{k}}\\
+\end{align}
 $$
 
 ### demonstration : les cartes distribuées ne changent pas la probabilité d'obtenir une carte x
