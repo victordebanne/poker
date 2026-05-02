@@ -59,6 +59,7 @@ $$
 \end{align}
 $$
 
+
 on peut donc calculer la probabilité avant distribution d'obtenir chaque combinaison. 
 
 $$
@@ -88,6 +89,23 @@ k! \times&0 \ 1 \ 1 \ 0\\
 \text{d'ou}\quad k!\prod_{i = 0}^{k - 1}\frac{1}{n-i} &= \frac{k!(n-k)!}{n!} = \frac{1}{\binom{n}{k}}\\
 \text{d'ou} \quad \mathbb{P}(c) &= \frac{\binom{t}{k}}{\binom{n}{k}}\\
 \end{align}
+$$
+
+$$
+\text{soit} \ \sigma \ \text{une séquence}\ (x_1, c, x_2, \cdots, x_3) \\
+\mathbb{P}(\sigma) = \prod_{i=0}^{t-1}
+\frac{
+\begin{cases}
+1 \ \text{si} \ \sigma_i = x_i \\
+n - i - (k -l_i) \ \text{sinon, avec} \ l_i, \ \text{le nombre de} \ x \ \text{passés}
+\end{cases}
+}
+{n - i}
+\\
+\text{on a}\\
+n - i - k - l_i =(n - k) - (i - l_i) \ \text{avec} \ (i - l_i), \ \text{le nombre de}\ c \ \text{restants dans la séquence.}\\
+\text{on trouve donc}\\
+\mathbb{P}(\sigma) = \frac{\prod_{j = k}^{t-1} n - j}{\prod_{i=0}^{t-1} n - i} = \frac{1}{\prod_{i=0}^{k-1} n - i} \cdot \frac{\prod_{j=k}^{t-1} n - i}{\prod_{i=k}^{t-1} n - i} = \boxed{\prod_{i=0}^{k-1}\frac{1}{n - i}}
 $$
 
 ### demonstration : les cartes distribuées ne changent pas la probabilité d'obtenir une carte x
