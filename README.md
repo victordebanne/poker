@@ -92,6 +92,7 @@ k! \times&0 \ 1 \ 1 \ 0\\
 $$
 
 $$
+\begin{align}
 \text{soit} \ \sigma \ \text{une séquence}\ (x_1, c, x_2, \cdots, x_3) \\
 \mathbb{P}(\sigma) = \prod_{i=0}^{t-1}
 \frac{
@@ -106,6 +107,7 @@ n - i - (k -l_i) \ \text{sinon, avec} \ l_i, \ \text{le nombre de} \ x \ \text{p
 n - i - k - l_i =(n - k) - (i - l_i) \ \text{avec} \ (i - l_i), \ \text{le nombre de}\ c \ \text{restants dans la séquence.}\\
 \text{on trouve donc}\\
 \mathbb{P}(\sigma) = \frac{\prod_{j = k}^{t-1} n - j}{\prod_{i=0}^{t-1} n - i} = \frac{1}{\prod_{i=0}^{k-1} n - i} \cdot \frac{\prod_{j=k}^{t-1} n - i}{\prod_{i=k}^{t-1} n - i} = \boxed{\prod_{i=0}^{k-1}\frac{1}{n - i}}
+\begin{align}
 $$
 
 ### demonstration : les cartes distribuées ne changent pas la probabilité d'obtenir une carte x
