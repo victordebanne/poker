@@ -65,7 +65,7 @@ on peut donc calculer la probabilité avant distribution d'obtenir chaque combin
 $$
 \begin{align}
 &\text{probabilité de tirer x et y parmi n cartes sans remise sur 3 tirages} \\
-P(x \ \text{puis} \ y \ \text{puis rien}) &= \frac{1}{n}\cdot\frac{1}{n-1} \\
+P(x \ \text{puis} \ y \ \text{puis rien}) &= \frac{1}{n}\cdot\frac{1}{n-1} \cdot \frac{n - 2}{n - 2}\\
 P(y \ \text{puis} \ x \ \text{puis rien}) &= \frac{1}{n}\cdot\frac{1}{n-1} \\
 P(x \ \text{puis rien puis} \ y) &= \frac{1}{n}\cdot\frac{1}{n-2} \\
 P(y \ \text{puis rien puis} \ x) &= \frac{1}{n}\cdot\frac{1}{n-2} \\
@@ -93,8 +93,8 @@ $$
 
 $$
 \begin{align}
-\text{soit} \ \sigma \ \text{une séquence}\ (x_1, c, x_2, \cdots, x_3) \\
-\mathbb{P}(\sigma) = \prod_{i=0}^{t-1}
+&\text{soit} \ \sigma \ \text{une séquence}\ (x_1, c, x_2, \cdots, x_3) \\
+\mathbb{P}(\sigma) &= \prod_{i=0}^{t-1}
 \frac{
 \begin{cases}
 1 \ \text{si} \ \sigma_i = x_i \\
@@ -104,9 +104,9 @@ n - i - (k -l_i) \ \text{sinon, avec} \ l_i, \ \text{le nombre de} \ x \ \text{p
 {n - i}
 \\
 \text{on a}\\
-n - i - k - l_i =(n - k) - (i - l_i) \ \text{avec} \ (i - l_i), \ \text{le nombre de}\ c \ \text{restants dans la séquence.}\\
+n - i - k - l_i &=(n - k) - (i - l_i) \ \text{avec} \ (i - l_i), \ \text{le nombre de}\ c \ \text{restants dans la séquence.}\\
 \text{on trouve donc}\\
-\mathbb{P}(\sigma) = \frac{\prod_{j = k}^{t-1} n - j}{\prod_{i=0}^{t-1} n - i} = \frac{1}{\prod_{i=0}^{k-1} n - i} \cdot \frac{\prod_{j=k}^{t-1} n - i}{\prod_{i=k}^{t-1} n - i} = \boxed{\prod_{i=0}^{k-1}\frac{1}{n - i}}
+\mathbb{P}(\sigma) &= \frac{\prod_{j = k}^{t-1} n - j}{\prod_{i=0}^{t-1} n - i} = \frac{1}{\prod_{i=0}^{k-1} n - i} \cdot \frac{\prod_{j=k}^{t-1} n - i}{\prod_{i=k}^{t-1} n - i} = \boxed{\prod_{i=0}^{k-1}\frac{1}{n - i}}
 \end{align}
 $$
 
