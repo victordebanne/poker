@@ -65,12 +65,17 @@ on peut donc calculer la probabilité avant distribution d'obtenir chaque combin
 $$
 \begin{align}
 &\text{probabilité de tirer x et y parmi n cartes sans remise sur 3 tirages} \\
-P(x \ \text{puis} \ y \ \text{puis rien}) &= \frac{1}{n}\cdot\frac{1}{n-1} \cdot \frac{n - 2}{n - 2}\\
-P(y \ \text{puis} \ x \ \text{puis rien}) &= \frac{1}{n}\cdot\frac{1}{n-1} \\
-P(x \ \text{puis rien puis} \ y) &= \frac{1}{n}\cdot\frac{1}{n-2} \\
-P(y \ \text{puis rien puis} \ x) &= \frac{1}{n}\cdot\frac{1}{n-2} \\
-P(\text{rien puis} \ x \ \text{puis} \ y) &= \frac{1}{n - 1}\cdot\frac{1}{n-2} \\
-P(\text{rien puis} \ y \ \text{puis} \ x) &= \frac{1}{n - 1}\cdot\frac{1}{n-2} \\
+P(x \ \text{puis} \ y \ \text{puis rien}) &= \frac{1}{n}\cdot\frac{1}{n-1} \cdot \frac{n - 2}{n - 2} = \frac{1}{n}\cdot\frac{1}{n-1}\\
+P(y \ \text{puis} \ x \ \text{puis rien}) &= \frac{1}{n}\cdot\frac{1}{n-1} \cdot \frac{n - 2}{n - 2} = \frac{1}{n}\cdot\frac{1}{n-1}\\
+P(x \ \text{puis rien puis} \ y) &= \frac{1}{n}\cdot\frac{n-2}{n - 1}\cdot\frac{1}{n-2}  = \frac{1}{n}\cdot\frac{1}{n-1}\\
+P(y \ \text{puis rien puis} \ x) &= \frac{1}{n}\cdot\frac{n-2}{n - 1}\cdot\frac{1}{n-2}  = \frac{1}{n}\cdot\frac{1}{n-1}\\
+P(\text{rien puis} \ x \ \text{puis} \ y) &= \frac{n-2}{n}\cdot\frac{1}{n - 1}\cdot\frac{1}{n-2}  = \frac{1}{n}\cdot\frac{1}{n-1}\\
+P(\text{rien puis} \ y \ \text{puis} \ x) &= \frac{n-2}{n}\cdot\frac{1}{n - 1}\cdot\frac{1}{n-2}  = \frac{1}{n}\cdot\frac{1}{n-1}\\
+\end{align}
+$$
+
+$$
+\begin{align}
 &\text{on généralise avec une combinaison c de k cartes parmi n cartes sur t tirages avec t > k}\\
 &\text{par exemple pour t = 4 et k = 2}\\
 &\binom{t}{k}
@@ -83,11 +88,6 @@ k! \times&0 \ 1 \ 0 \ 1\\
 k! \times&0 \ 1 \ 1 \ 0\\
 \end{cases} 
 \\
-\mathbb{P}(c) &=
-\binom{t}{k} k!\prod_{i = 0}^{k - 1}\frac{1}{n-i}\\
-\prod_{i = 0}^{k - 1}n-i &= \frac{n!}{(n-k)!}\\
-\text{d'ou}\quad k!\prod_{i = 0}^{k - 1}\frac{1}{n-i} &= \frac{k!(n-k)!}{n!} = \frac{1}{\binom{n}{k}}\\
-\text{d'ou} \quad \mathbb{P}(c) &= \frac{\binom{t}{k}}{\binom{n}{k}}\\
 \end{align}
 $$
 
@@ -107,6 +107,16 @@ n - i - (k -l_i) \ \text{sinon, avec} \ l_i, \ \text{le nombre de} \ x \ \text{p
 n - i - k - l_i &=(n - k) - (i - l_i) \ \text{avec} \ (i - l_i), \ \text{le nombre de}\ c \ \text{restants dans la séquence.}\\
 \text{on trouve donc}\\
 \mathbb{P}(\sigma) &= \frac{\prod_{j = k}^{t-1} n - j}{\prod_{i=0}^{t-1} n - i} = \frac{1}{\prod_{i=0}^{k-1} n - i} \cdot \frac{\prod_{j=k}^{t-1} n - i}{\prod_{i=k}^{t-1} n - i} = \boxed{\prod_{i=0}^{k-1}\frac{1}{n - i}}
+\end{align}
+$$
+
+$$
+\begin{align}
+\mathbb{P}(c) &=
+\binom{t}{k} k!\prod_{i = 0}^{k - 1}\frac{1}{n-i}\\
+\prod_{i = 0}^{k - 1}n-i &= \frac{n!}{(n-k)!}\\
+\text{d'ou}\quad k!\prod_{i = 0}^{k - 1}\frac{1}{n-i} &= \frac{k!(n-k)!}{n!} = \frac{1}{\binom{n}{k}}\\
+\text{d'ou} \quad \mathbb{P}(c) &= \frac{\binom{t}{k}}{\binom{n}{k}}\\
 \end{align}
 $$
 
@@ -134,6 +144,28 @@ $$
 &\mathbb{P}(x|k) = \frac{1}{n} \\ \\
 &\text{d'une autre façon, si n - 1 cartes sont brulées, la probabilité que la carte non brulée soit x est} \quad \frac{1}{n} 
 \end{align}
+$$
+
+## Application aux combinaisons du poker
+
+Les mains du poker sont composées de 1 à 5 cartes
+
+Avant la distribution, on peut chercher à calculer la probabilité d'obtenir une main spécifique. 
+
+il s'agit donc de la probabilté d'obtenir une combinaison $c$, de composée de $k$ cartes sur $t$ tirages parmi $n$ cartes. 
+
+soit les combinaisons $c_1, \cdots, c_5$. 
+
+$$
+\mathbb{P}(c|t,n,k) = \frac{\binom{t}{k}}{\binom{n}{k}}
+$$
+
+$$
+\text{pour} \ c_1
+$$
+
+$$
+\mathbb{P}(c_1|7,52,1) = \frac{\binom{7}{2}}{\binom{52}{2}} = 0.1346153846153846
 $$
 
 
