@@ -172,5 +172,30 @@ la probabilité d'avoir un séquence exacte sur un certain nombre de tirages n'i
 
 donc pour obtenir la probabilité que $t$ tirages aient exactement un certain nombre d'As, il faut imposer une contrainte sur les cartes n'appartenant pas à la séquence. 
 
+donc la probabilité pour que dans une séquence donnée contienne A♦ et A♥ est la probabilité de la combinaison A♦ + A♥ sur $t$ tirages parmi $n$ cartes par la probabilité sur $(t - k)$ tirages de tirer $(t - k)$ cartes parmi $(n-k)$ cartes. 
+
+$$
+\begin{align}
+&\text{appelons} \ c \ \text{la combinaison recherchée et } \ \overline{c} \ \text{la combinaison complémentaire avec contrainte}. \\
+&\mathbb{P}(c) = \frac{\binom{t}{k}}{\binom{n}{k}}\\
+&\mathbb{P}(\overline{c}) = \frac{\binom{t-k}{t-k}}{\binom{n-k}{t-k}}\\
+\end{align}
+$$
+
+calcul de la probabilité d'avoir exactement une paire d'As:
+
+$$
+\begin{align}
+&\mathbb{P}(\text{exactement paire d'As}) &= \text{(nombre de combinaisons d'As)} \cdot P(\text{contient paire d'As}|n, k, t) \cdot \text{(nombre de combinaisons sans As)} \cdot P(\text{contient aucun as}|n-k, t-k, t-k) \\
+&= \binom{4}{2} \cdot \frac{\binom{7}{2}}{\binom{52}{2}} \cdot \binom{50}{5} \cdot \frac{1}{\binom{50}{5}}
+\end{align}
+$$
+
+$$
+\mathbb{P}(\text{exactement} \  k x_i|t, k, n) = \binom{A}{k} \cdot \frac{\binom{t}{k}}{\binom{n}{k}} \cdot \binom{A-k}{t-k} \cdot \frac{1}{\binom{n-k}{t-k}}
+$$
+
+
+
 
 
