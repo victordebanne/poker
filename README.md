@@ -168,4 +168,9 @@ $$
 \mathbb{P}(c_1|7,52,1) = \frac{\binom{7}{2}}{\binom{52}{2}} = 0.1346153846153846
 $$
 
+la probabilité d'avoir un séquence exacte sur un certain nombre de tirages n'impose rien sur les autres cartes.
+
+donc pour obtenir la probabilité que $t$ tirages aient exactement un certain nombre d'As, il faut imposer une contrainte sur les cartes n'appartenant pas à la séquence. 
+
+
 
