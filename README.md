@@ -187,14 +187,21 @@ calcul de la probabilité d'avoir exactement une paire d'As:
 $$
 \begin{align}
 &\mathbb{P}(\text{exactement paire d'As}) &= \text{(nombre de combinaisons d'As)} \cdot P(\text{contient paire d'As}|n, k, t) \cdot \text{(nombre de combinaisons sans As)} \cdot P(\text{contient aucun as}|n-k, t-k, t-k) \\
-&= \binom{4}{2} \cdot \frac{\binom{7}{2}}{\binom{52}{2}} \cdot \binom{50}{5} \cdot \frac{1}{\binom{50}{5}}
+&= \binom{4}{2} \cdot \frac{\binom{7}{2}}{\binom{52}{2}} \cdot \binom{48}{5} \cdot \frac{1}{\binom{50}{5}}
 \end{align}
 $$
 
 $$
-\mathbb{P}(\text{exactement} \  k x_i|t, k, n) = \binom{A}{k} \cdot \frac{\binom{t}{k}}{\binom{n}{k}} \cdot \binom{A-k}{t-k} \cdot \frac{1}{\binom{n-k}{t-k}}
+\mathbb{P}(\text{exactement} \  k x_i|t, k, n) = \binom{A}{k} \cdot \frac{\binom{t}{k}}{\binom{n}{k}} \cdot \binom{n-A}{t-k} \cdot \frac{1}{\binom{n-k}{t-k}}
 $$
 
+$$
+=  
+\frac{A!}{k!(A-k)!} \cdot
+\frac{(n-A)!}{(t-k)!(n-A-t-k)!} \cdot
+\frac{\frac{t!}{k!(t-k)!}}{\frac{n!}{k!(n-k)!}} \cdot
+\frac{1}{\frac{(n-k)!}{(t-k)!(n-t-2k)!}}
+$$
 
 
 
