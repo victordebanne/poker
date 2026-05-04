@@ -196,11 +196,11 @@ $$
 $$
 
 $$
-=  
-\frac{A!}{k!(A-k)!} \cdot
-\frac{(n-A)!}{(t-k)!(n-A-t-k)!} \cdot
+=\frac{A!}{k!(A-k)!} \cdot \binom{n-A}{t-k} \cdot
 \frac{\frac{t!}{k!(t-k)!}}{\frac{n!}{k!(n-k)!}} \cdot
-\frac{1}{\frac{(n-k)!}{(t-k)!(n-t-2k)!}}
+\frac{1}{\frac{(n-k)!}{(t-k)!(n-k-(t - k))!}}
+= \frac{A!}{k!(A-k)!} \cdot \binom{n-A}{t-k} \cdot \frac{t!(n-t)!}{n!}
+=\frac{\frac{A!}{k!(A-k)!} \cdot \binom{n-A}{t-k}}{\binom{n}{t}}
 $$
 
 
