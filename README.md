@@ -210,8 +210,6 @@ $$
 $$
 \begin{align}
 P(X \ge k|t,n,A) &= \sum_{i=k}^{A} \frac{\binom{A}{i} \cdot \binom{n-A}{t-i}}{\binom{n}{t}} \\
-&= \frac{A}{\binom{n}{t}}\sum_{i=k}^{A}\binom{A}{i} \cdot \binom{n-A}{t-i}\\
-\\
 \end{align}
 $$
 
