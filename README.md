@@ -200,7 +200,11 @@ $$
 \frac{t!k!(n-k)!}{k!(t-k)!n!} \cdot
 \frac{(t-k)!(n-k-(t - k))!}{(n-k)!}
 = \binom{A}{k} \cdot \binom{n-A}{t-k} \cdot \frac{t!(n-t)!}{n!}
-= \frac{\binom{A}{k} \cdot \binom{n-A}{t-k}}{\binom{n}{t}}
+= \boxed{\frac{\binom{A}{k} \cdot \binom{n-A}{t-k}}{\binom{n}{t}}}
+$$
+
+$$
+\text{il s'agit de la loi hypergéométrique}
 $$
 
 
