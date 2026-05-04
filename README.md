@@ -209,7 +209,21 @@ $$
 
 $$
 \begin{align}
-P(X \ge k|t,n,A) &= \sum_{i=k}^{A} \frac{\binom{A}{i} \cdot \binom{n-A}{t-i}}{\binom{n}{t}} \\
+\mathbb{P}(X \ge k|t,n,A) &=  \mathbb{P}(X = k|t,n,A) + \mathbb{P}(X = k+1|t,n,A)+\cdots+\mathbb{P}(X = A|t,n,A)\\
+&= \sum_{i=k}^{A} \frac{\binom{A}{i} \cdot \binom{n-A}{t-i}}{\binom{n}{t}} \\
+\end{align}
+$$
+
+$$
+\begin{align}
+&\text{avec} \binom{N_i}{c_i} \ \text{le nombre de cartes favorables de} \ c_i \ \text{dans} \ n  \\
+&\text{et} \quad c = \sum_{i=0}^{m}c_i\\
+&\mathbb{P}(c|N, n, t) = 
+\left[\prod_{i=1}^{m} \binom{N_i}{\lvert c_i \rvert} \cdot
+\frac{\binom{t-\sum_{j=1}^{i}\lvert c_j \rvert}{\lvert c_i \rvert}}
+{\binom{n-(\sum_{j=1}^{i}\lvert c_j \rvert) + \lvert c_1 \rvert}{\lvert c_i \rvert}}\right] \cdot
+\frac{\binom{n - \sum_{i=1}^{m}N_i}{t-\sum_{i=1}^{m}\lvert c_i \rvert}}
+{\binom{n - \sum_{i=1}^{m}\lvert c_i \rvert}{t-\sum_{i=1}^{m}\lvert c_i \rvert}}
 \end{align}
 $$
 
