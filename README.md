@@ -227,6 +227,24 @@ $$
 \end{align}
 $$
 
+$$
+\begin{align}
+&\text{On travaille dans l’espace probabiliste uniforme des mains de t cartes parmi n} \\
+&\text{et toutes les décompositions sont interprétées comme des probabilités conditionnelles définies sur ce même espace.} \\ \\
+&P(\text{exactement une paire}) = P(\text{une paire}|n, t) \cdot P(\text{aucune paire}|n - 2, t - 2) \\ \\
+&\text{on impose donc une contrainte sur les cartes restantes}\\
+&\text{il y a} \ 4 \ \text{cartes d'un type (A = nombre de cartes d'un type)}  \\
+&\text{chaque carte ne doit pas être appairée}\\
+&\text{exemple pour} \ t = 3, n = 52, A = 4 \\ \\
+&P(\text{aucune paire}) = 1 \cdot \frac{51 - 3}{51} \cdot \frac{50 - 6}{50}\\  \\
+&\text{on généralise} \\
+&P(\text{aucune paire}|A, n,t) = \prod_{i = 0}^{t - 1} \frac{n - i - (A- 1)i}{n - i}
+=\prod_{i = 0}^{t - 1} \frac{n - Ai}{n - i}\\
+&\text{d'ou} \ P(\text{exactement une paire}) = 
+\binom{13}{1} \cdot \frac{\binom{A}{k} \binom{n - A}{t - k}}{\binom{n}{t}} \cdot \prod_{i = 0}^{t - 1 - k} \frac{n - k - Ai-2}{n - k - i}
+\end{align}
+$$
+
 
 
 
