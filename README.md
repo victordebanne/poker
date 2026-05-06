@@ -245,6 +245,17 @@ $$
 \end{align}
 $$
 
+$$
+\begin{align}\iff 
+P(\text{aucune paire}|A, n,t)
+&=\prod_{i = 0}^{t - 1} \frac{n - Ai}{n - i} = \prod_{i = 0}^{t - 1} \frac{1}{n - i}\cdot \prod_{i = 0}^{t - 1}n - Ai \\
+&= \frac{(n - t)!}{n!} \cdot A^t\frac{\frac{n}{A}!}{(\frac{n}{A}-t)!} \\
+&= \frac{(n - t)!\ t!}{n!\ t!} \cdot A^t\frac{\frac{n}{A}!\ t!}{(\frac{n}{A}-t)!\ t!} \\
+&= \frac{1}{\binom{n}{t}\ t!} \cdot A^t \binom{\frac{n}{A}}{t} \ t! \\
+&= A^t \frac{\binom{\frac{n}{A}}{t}}{\binom{n}{t}} 
+\end{align}
+$$
+
 
 
 
